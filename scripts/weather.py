@@ -3,7 +3,10 @@
 import requests
 import json
 
-URL = 'https://api.openweathermap.org/data/2.5/weather?id=3333123&units=metric&appid=d246e9381121f746eda835f525a1660f'
+with open('api.txt') as api_code:
+    api=api_code.read().splitlines()[0]
+
+URL = 'https://api.openweathermap.org/data/2.5/weather?id=3333123&units=metric&appid='+api
 
 GLYPHS = {
     'clear'         : '',
