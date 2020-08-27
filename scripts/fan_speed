@@ -4,4 +4,4 @@ SPEED_MAIN=$(sensors | grep fan2 | awk {'printf("%s", $2)'} | tr A-Z a-z)
 SPEED_AUX=$(sensors | grep fan4 | awk {'printf("%s", $2)'} | tr A-Z a-z)
 SPEED_AUX2=$(sensors | grep fan5 | awk {'printf("%s %s", $2, $3)'} | tr A-Z a-z)
 
-echo "$SPEED_MAIN $SPEED_AUX $SPEED_AUX2  |  " 
+echo "$SPEED_MAIN $SPEED_AUX $SPEED_AUX2" 

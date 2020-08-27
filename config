@@ -119,9 +119,10 @@ bindsym $mod+o resize grow width 1 px or 1 ppt
 
 # Colourscheme settings
 set $focused-bg-color 	    #00000000 
-set $urgent-bg-color        #c20606
+set $urgent-bg-color        #00000000 
 set $text-color             #ffffff
 set $inactive-text-color    #000000
+set $urgent-text-color      #c20010
 
 bar {
 	status_command i3blocks -c ~/.config/i3/i3blocks_top.conf 
@@ -133,29 +134,11 @@ bar {
                             #border             #background         #text
         focused_workspace   $focused-bg-color   $focused-bg-color   $text-color
         inactive_workspace  $focused-bg-color   $focused-bg-color   $inactive-text-color
-        urgent_workspace    $urgent-bg-color    $urgent-bg-color    $inactive-text-color 
+        urgent_workspace    $urgent-bg-color    $urgent-bg-color    $urgent-text-color
 	}
     i3bar_command i3bar --transparency
 	position top
 }
-
-bar {
-    status_command i3blocks -c ~/.config/i3/i3blocks_bottom.conf
-    separator_symbol |
-	colors {
-        background  $focused-bg-color
-        separator   $text-color
-
-                            #border             #background         #text
-        focused_workspace   $focused-bg-color   $focused-bg-color   $text-color
-        inactive_workspace  $focused-bg-color   $focused-bg-color   $inactive-text-color
-        urgent_workspace    $urgent-bg-color    $urgent-bg-color    $inactive-text-color 
-	}
-    i3bar_command i3bar --transparency
-    position bottom
-    workspace_buttons no
-}
-
 
 #-------------------------------------###
 
