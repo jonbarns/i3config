@@ -1,0 +1,5 @@
+#!/bin/bash
+
+Memory=$(echo | free -m | grep Mem: | awk '{printf "%.2f", (int($3)/1000)}')
+
+echo $Memory Gb

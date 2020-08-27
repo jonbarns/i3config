@@ -1,0 +1,12 @@
+#!/bin/bash
+
+Volume=$(echo | amixer -c 1 -M get Master | grep % | awk '{print $4}' | tr -d [])
+
+echo $Volume #Full text
+echo $Volume #Short text
+
+case $BLOCK_BUTTON in
+    3) amixer -q -c 1 -M set Master toggle ;;
+    4) amixer -q -c 1 -M set Master 1%+ unmute ;;
+    5) amixer -q -c 1 -M set Master 1%- unmute ;;
+esac
